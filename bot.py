@@ -51,7 +51,7 @@ class Bot(Client):
         for guild_id in self.guilds:
             self.connected_guilds[int(guild_id)] = \
                 await self.get_guild(guild_id)
-        print(f'Connected Guild IDs: {[gid for gid in self.connected_guilds]}')
+        print(f'Connected Guild IDs: {list(self.connected_guilds)}')
 
     @command(description='Keep the given thread ID alive (all: all threads)')
     async def addthread(self, ctx: MessageContext, thread_id: str):
